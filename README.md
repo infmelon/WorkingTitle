@@ -1,4 +1,0 @@
-# WorkingTitle
-:^)
-
-:> :-) :o) :-B :}D
