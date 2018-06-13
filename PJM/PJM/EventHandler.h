@@ -7,5 +7,5 @@ class EventHandler
 private:
 
 public:
-	void handleEvent(SDL_Event * event);
+	void handleEvent(SDL_Event * event);//test
 };
