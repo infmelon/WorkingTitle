@@ -17,5 +17,6 @@ private:
 	bool quit = false;
 
 public:
+	Core();
 	void startLoop();
 };
