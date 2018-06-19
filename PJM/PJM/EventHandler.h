@@ -6,8 +6,8 @@
 class EventHandler
 {
 private:
-	bool keyPressed[285];
-	bool mousePressed[4]; // Mousebuttons fangen bei 1 an
+	bool keyPressed[285] = { 0 }; // Arrays mit 0 initialisieren
+	bool mousePressed[4] = { 0 }; // Mousebuttons fangen bei 1 an
 	Config config;	// Benötigt um die richtigen events auszulösen
 					// Beispiel ist der Klick auf dem Menü oder dem Bildschirm
 
