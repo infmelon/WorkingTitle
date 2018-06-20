@@ -5,7 +5,7 @@ Initialisiert alle wichtigen Variablen.
 */
 Core::Core()
 {
-	this->config = Config();
+	this->config = new Config();
 
 	eventHandler = new EventHandler(config);
 	event = new SDL_Event();
@@ -25,8 +25,9 @@ void Core::startLoop()
 	// TODO: Daten aus der Konfig lesen.
 	window = SDL_CreateWindow("PJM", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 		400, 400, SDL_WINDOW_SHOWN);
+	SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
 
-	renderer = new Renderer(window);
+	renderer = new Renderer(window, config);
 
 	while (!quit)
 	{

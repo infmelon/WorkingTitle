@@ -1,6 +1,6 @@
 #include "EventHandler.h"
 
-EventHandler::EventHandler(Config & config)
+EventHandler::EventHandler(Config * config)
 {
 	this->config = config;
 }
@@ -34,6 +34,10 @@ void EventHandler::handleEvent(SDL_Event* event, bool &quit)
 		break;
 	}
 
+	if (keyPressed[SDL_SCANCODE_ESCAPE])
+	{
+		quit = true;
+	}
 	handleKeyEvent();
 	handleMouseEvent();
 }
