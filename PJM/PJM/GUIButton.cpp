@@ -12,7 +12,7 @@ GUIButton::GUIButton(std::string text, int xPos, int yPos, int width, int height
 
 void GUIButton::draw(Renderer * renderer)
 {
-	SDL_Rect rect = SDL_Rect();
+	SDL_Rect rect;
 	rect.x = this->guiRect.xPos;
 	rect.y = this->guiRect.yPos;
 	rect.w = this->guiRect.width;
