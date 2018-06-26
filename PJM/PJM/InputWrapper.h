@@ -13,7 +13,7 @@ class InputWrapper
 public:
 	//Initialisiert die Felder usw.
 	static void initialize();
-	static bool is_initialized();
+	static bool isInitialized();
 
 	//Aktualisiert die Inhalte mithilfe der aktuellen SDL-Events
 	static void updateEvents();
@@ -22,14 +22,14 @@ public:
 	static int getMouseX();
 	static int getMouseY();
 
-	//Abruf der Maus-Tastenzust‰nde:
+	//Abruf der Maus-Tastenzust√§nde:
 	static bool isMouseButtonUp(int key);
 	static bool isMouseButtonUpNow(int key);
 	static bool isMouseButtonDown(int key);
 	static bool isMouseButtonDownNow(int key);
 	static ButtonState getMouseButtonState(int key);
 
-	//Abruf der Tastatur-Tastenzust‰nde:
+	//Abruf der Tastatur-Tastenzust√§nde:
 	static bool isButtonUp(int key);
 	static bool isButtonUpNow(int key);
 	static bool isButtonDown(int key);
@@ -50,5 +50,5 @@ private:
 	static bool initialized;
 };
 //Name:				InputWrapper
-//Funktionalit‰t:	Wrapped die SDL_EVENT-Funktionalit‰t als Utility-Klasse
+//Funktionalit√§t:	Wrapped die SDL_EVENT-Funktionalit√§t als Utility-Klasse
 
