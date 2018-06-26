@@ -1,14 +1,13 @@
 #include "Core.h"
+#include "InputWrapper.h"
 
 /*
 Initialisiert alle wichtigen Variablen.
 */
 Core::Core()
 {
-	this->config = new Config();
-
-	eventHandler = new EventHandler(config);
-	event = new SDL_Event();
+	eventHandler = new EventHandler();
+	Config::init();
 }
 
 /*
@@ -27,13 +26,13 @@ void Core::startLoop()
 		400, 400, SDL_WINDOW_SHOWN);
 	SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
 
-	renderer = new Renderer(window, config);
+	renderer = new Renderer(window);
 
-	while (!quit)
+	while (!Config::quit)
 	{
 		long frameTime = SDL_GetTicks();
 		
-		eventHandler->handleEvent(event, quit);
+		eventHandler->handleEvent();
 
 		renderer->render();
 

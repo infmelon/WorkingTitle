@@ -6,11 +6,12 @@
 class Config
 {
 public: 
-	Config();
-	GUI* gui;
+	static void init();
+	static GUI* gui;
 //	Map* map;
-	~Config();
 
 	static int menueXPos;
 	static int menueYPos;
+
+	static bool quit;
 };

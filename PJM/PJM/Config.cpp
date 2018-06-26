@@ -2,13 +2,10 @@
 
 int Config::menueXPos = 0;
 int Config::menueYPos = 0;
+bool Config::quit = false;
+GUI* Config::gui = nullptr;
 
-Config::Config()
+void Config::init()
 {
-	this->gui = new GUI();
-}
-
-Config::~Config()
-{
-	delete this->gui;
+	gui = new GUI();
 }

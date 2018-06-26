@@ -1,8 +1,9 @@
 #include "EventHandler.h"
+#include "InputWrapper.h"
 
-EventHandler::EventHandler(Config * config)
+EventHandler::EventHandler()
 {
-	this->config = config;
+
 }
 
 /*
@@ -11,33 +12,15 @@ Funktion behandelt jedes Event mithilfe des Eventhandlers.
 Hier wird abgefragt um welches Event es sich handelt um damit
 die passende Funktion des EventHandlers aufzurufen.
 */
-void EventHandler::handleEvent(SDL_Event* event, bool &quit)
+void EventHandler::handleEvent()
 {
-	SDL_PollEvent(event);
+	InputWrapper::updateEvents();
 
-	switch (event->type)
+	if (InputWrapper::isButtonDownNow(SDL_SCANCODE_ESCAPE) ||InputWrapper::getQuit())
 	{
-	case SDL_QUIT:
-		quit = true;
-		break;
-	case SDL_KEYDOWN:
-		keyPressed[event->key.keysym.scancode] = true;
-		break;
-	case SDL_KEYUP:
-		keyPressed[event->key.keysym.scancode] = false;
-		break;
-	case SDL_MOUSEBUTTONDOWN:
-		mousePressed[event->button.button] = true;
-		break;
-	case SDL_MOUSEBUTTONUP:
-		mousePressed[event->button.button] = false;
-		break;
+		Config::quit = true;
 	}
 
-	if (keyPressed[SDL_SCANCODE_ESCAPE])
-	{
-		quit = true;
-	}
 	handleKeyEvent();
 	handleMouseEvent();
 }

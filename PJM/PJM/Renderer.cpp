@@ -1,7 +1,7 @@
 #include "Renderer.h"
 #include "Config.h"
 
-Renderer::Renderer(SDL_Window * window, Config * config)
+Renderer::Renderer(SDL_Window * window)
 {
 	if (window == nullptr)
 	{
@@ -9,7 +9,6 @@ Renderer::Renderer(SDL_Window * window, Config * config)
 	}
 
 	this->window = window;
-	this->config = config;
 
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 }
@@ -19,7 +18,7 @@ void Renderer::render()
 	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 0);
 	SDL_RenderClear(renderer);
 
-	config->gui->draw(this);
+	Config::gui->draw(this);
 
 	SDL_RenderPresent(renderer);
 }
