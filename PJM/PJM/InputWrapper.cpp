@@ -33,14 +33,14 @@ void InputWrapper::initialize()
 	}
 }
 
-bool InputWrapper::is_initialized()
+bool InputWrapper::isInitialized()
 {
 	return initialized;
 }
 
 void InputWrapper::updateEvents()
 {
-	//Läuft über alle Tasten und setzt es auf den jeweiligen Standard-Zustand falls es sich zuvor in einem der "NOW"-Zustände befand
+	//LÃ¤uft Ã¼ber alle Tasten und setzt es auf den jeweiligen Standard-Zustand falls es sich zuvor in einem der "NOW"-ZustÃ¤nde befand
 	for (int i = 0; i < 285; i++)
 	{
 		if (keyStates[i] == ButtonState::DOWN_NOW)
