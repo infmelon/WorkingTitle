@@ -11,6 +11,9 @@ enum class ButtonState
 class InputWrapper
 {
 public:
+	//Verhindert das Instanziieren der Utitlity-Klasse:
+	InputWrapper() = delete;
+
 	//Initialisiert die Felder usw.
 	static void initialize();
 	static bool isInitialized();

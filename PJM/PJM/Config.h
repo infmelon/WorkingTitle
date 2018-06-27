@@ -6,6 +6,9 @@
 class Config
 {
 public: 
+	//Verhindert das Instanziieren der Utitlity-Klasse:
+	Config() = delete;
+
 	static void init();
 	static GUI* gui;
 //	Map* map;
