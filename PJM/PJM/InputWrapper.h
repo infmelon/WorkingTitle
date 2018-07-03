@@ -44,7 +44,7 @@ public:
 
 private:
 	static ButtonState keyStates[285];
-	static ButtonState mouseStates[2];
+	static ButtonState mouseStates[3];
 	static int mouseX;
 	static int mouseY;
 

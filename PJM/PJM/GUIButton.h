@@ -9,8 +9,8 @@ private:
 	std::string text;
 
 public:
-	GUIButton();
-	GUIButton(std::string text, int xPos, int yPos, int width, int height);
+	GUIButton(const std::string &text, const GUIRect &guiRect);
+	GUIButton(const std::string &text, int xPos, int yPos, int width, int height);
 
 	void draw(Renderer* renderer);
 };

@@ -1,5 +1,9 @@
 #include "GUIElement.h"
 
+GUIElement::GUIElement(const GUIRect &guiRect) : GUIElement(guiRect.xPos, guiRect.yPos, guiRect.width, guiRect.height)
+{
+}
+
 /*
 Konstruktor initialisert die Größe des GuiElements
 */

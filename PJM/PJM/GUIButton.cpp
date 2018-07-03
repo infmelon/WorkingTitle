@@ -1,11 +1,13 @@
 #include "GUIButton.h"
 #include "Fonts.h"
 
-GUIButton::GUIButton()
+GUIButton::GUIButton(const std::string &text, const GUIRect & guiRect)
+	: GUIElement(guiRect)
 {
+	this->text = text;
 }
 
-GUIButton::GUIButton(std::string text, int xPos, int yPos, int width, int height)
+GUIButton::GUIButton(const std::string &text, int xPos, int yPos, int width, int height)
 	: GUIElement(xPos, yPos, width, height)
 {
 	this->text = text;
