@@ -8,10 +8,12 @@
 #include "Core.h"
 #include <iostream>
 
-int wmain(int argc, char* args[])
+int main(int argc, char** argv)
 {
 	Core core = Core();
 	core.startLoop();
+
+	return 0;
 }
 
 
