@@ -1,5 +1,6 @@
 #include "Core.h"
 #include "InputWrapper.h"
+#include <SDL_ttf.h>
 
 /*
 Initialisiert alle wichtigen Variablen.
@@ -19,6 +20,10 @@ void Core::startLoop()
 	if (SDL_Init(SDL_INIT_VIDEO))
 	{
 		throw "SDL konnte nicht initialisiert werden";
+	}
+	if (TTF_Init() != 0)
+	{
+		throw "TTF konnte nicht initialisiert werden";
 	}
 
 	// TODO: Daten aus der Konfig lesen.

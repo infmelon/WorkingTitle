@@ -1,4 +1,5 @@
 #include "GUIButton.h"
+#include "Fonts.h"
 
 GUIButton::GUIButton()
 {
@@ -20,4 +21,10 @@ void GUIButton::draw(Renderer * renderer)
 
 	SDL_SetRenderDrawColor(renderer->getRenderer(), 144, 0, 133, 0);
 	SDL_RenderFillRect(renderer->getRenderer(), &rect);
+
+	SDL_Color color = { 255, 255, 255, 255 };
+	SDL_Texture * texture = Fonts::createFont(text, 80, color, renderer->getRenderer());
+
+	SDL_RenderCopy(renderer->getRenderer(), texture, NULL, &rect);
+	SDL_DestroyTexture(texture);
 }
