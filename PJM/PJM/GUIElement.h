@@ -11,7 +11,7 @@ struct GUIRect
 	int width;
 	int height;
 	
-	bool clicked()
+	bool clicked()const
 	{
 		bool ret = true;
 
@@ -33,7 +33,7 @@ struct GUIRect
 		return ret;
 	}
 
-	bool hovered()
+	bool hovered()const
 	{
 		int mouseX = InputWrapper::getMouseX();
 		int mouseY = InputWrapper::getMouseY();
@@ -48,10 +48,7 @@ protected:
 	GUIRect guiRect;
 
 public:
-	GUIElement()
-	{
-		;
-	};
+	GUIElement(const GUIRect &guiRect);
 	GUIElement(int xPos, int yPos, int width, int height);
 	void update();
 

@@ -5,7 +5,7 @@
 //Setzt die statischen Attribute der Utility-Klasse
 bool InputWrapper::initialized = false;
 ButtonState InputWrapper::keyStates[285];
-ButtonState InputWrapper::mouseStates[2];
+ButtonState InputWrapper::mouseStates[3];
 int InputWrapper::mouseX;
 int InputWrapper::mouseY;
 bool InputWrapper::quit;
